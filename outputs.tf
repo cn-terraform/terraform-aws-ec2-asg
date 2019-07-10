@@ -57,3 +57,67 @@ output "asg_target_group_arns" {
     description = "(Optional) list of Target Group ARNs that apply to this AutoScaling Group."
     value       = aws_autoscaling_group.asg.target_group_arns
 }
+
+# ---------------------------------------------------------------------------------------------------------------------
+# AUTOSCALING POLICIES
+# ---------------------------------------------------------------------------------------------------------------------
+output "cpu_high_name" {
+    description = "The scaling policy's name."
+    value       = aws_autoscaling_policy.cpu_high.name
+}
+output "cpu_high_arn" {
+    description = "The ARN assigned by AWS to the scaling policy."
+    value       = aws_autoscaling_policy.cpu_high.arn
+}
+output "cpu_high_autoscaling_group_name" {
+    description = "The scaling policy's assigned autoscaling group"
+    value       = aws_autoscaling_policy.cpu_high.autoscaling_group_name
+}
+output "cpu_high_adjustment_type" {
+    description = "The scaling policy's adjustment type."
+    value       = aws_autoscaling_policy.cpu_high.adjustment_type
+}
+output "cpu_high_policy_type" {
+    description = "The scaling policy's type."
+    value       = aws_autoscaling_policy.cpu_high.policy_type
+}
+output "cpu_low_name" {
+    description = "The scaling policy's name."
+    value       = aws_autoscaling_policy.cpu_low.name
+}
+output "cpu_low_arn" {
+    description = "The ARN assigned by AWS to the scaling policy."
+    value       = aws_autoscaling_policy.cpu_low.arn
+}
+output "cpu_low_autoscaling_group_name" {
+    description = "The scaling policy's assigned autoscaling group"
+    value       = aws_autoscaling_policy.cpu_low.autoscaling_group_name
+}
+output "cpu_low_adjustment_type" {
+    description = "The scaling policy's adjustment type."
+    value       = aws_autoscaling_policy.cpu_low.adjustment_type
+}
+output "cpu_low_policy_type" {
+    description = "The scaling policy's type."
+    value       = aws_autoscaling_policy.cpu_low.policy_type
+}
+
+# ---------------------------------------------------------------------------------------------------------------------
+# CLOUDWATCH ALARMS
+# ---------------------------------------------------------------------------------------------------------------------
+output "cpu_high_alarm_id" {
+    description = "The ID of the health check."
+    value       = aws_cloudwatch_metric_alarm.cpu_high_alarm.id
+}
+output "cpu_high_alarm_arn" {
+    description = "(Optional) list of Target Group ARNs that apply to this AutoScaling Group."
+    value       = aws_cloudwatch_metric_alarm.cpu_high_alarm.arn
+}
+output "cpu_low_alarm_id" {
+    description = "The ID of the health check."
+    value       = aws_cloudwatch_metric_alarm.cpu_low_alarm.id
+}
+output "cpu_low_alarm_arn" {
+    description = "(Optional) list of Target Group ARNs that apply to this AutoScaling Group."
+    value       = aws_cloudwatch_metric_alarm.cpu_low_alarm.arn
+}
