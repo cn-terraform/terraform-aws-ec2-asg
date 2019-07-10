@@ -1,6 +1,18 @@
 # ---------------------------------------------------------------------------------------------------------------------
 # AWS EC2 AUTO SCALING GROUP
 # ---------------------------------------------------------------------------------------------------------------------
+output "lc_name" {
+    description = "The name of the launch configuration."
+    value       = aws_launch_configuration.lc.name
+}
+output "lc_id" {
+    description = "The ID of the launch configuration."
+    value       = aws_launch_configuration.lc.id
+}
+
+# ---------------------------------------------------------------------------------------------------------------------
+# AWS EC2 AUTO SCALING GROUP
+# ---------------------------------------------------------------------------------------------------------------------
 output "asg_id" {
     description = "The autoscaling group id."
     value       = aws_autoscaling_group.asg.id
@@ -70,7 +82,7 @@ output "cpu_high_arn" {
     value       = aws_autoscaling_policy.cpu_high.arn
 }
 output "cpu_high_autoscaling_group_name" {
-    description = "The scaling policy's assigned autoscaling group"
+    description = "The scaling policy's assigned autoscaling group."
     value       = aws_autoscaling_policy.cpu_high.autoscaling_group_name
 }
 output "cpu_high_adjustment_type" {
@@ -90,7 +102,7 @@ output "cpu_low_arn" {
     value       = aws_autoscaling_policy.cpu_low.arn
 }
 output "cpu_low_autoscaling_group_name" {
-    description = "The scaling policy's assigned autoscaling group"
+    description = "The scaling policy's assigned autoscaling group."
     value       = aws_autoscaling_policy.cpu_low.autoscaling_group_name
 }
 output "cpu_low_adjustment_type" {
