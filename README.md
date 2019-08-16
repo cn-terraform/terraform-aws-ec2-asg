@@ -10,7 +10,7 @@ Check valid versions on:
 * Github Releases: <https://github.com/jnonino/terraform-aws-ec2-asg/releases>
 * Terraform Module Registry: <https://registry.terraform.io/modules/jnonino/ec2-asg/aws>
 
-        module "ec2-asg": 
+        module "ec2-asg" { 
             source              = "jnonino/ec2-asg/aws"
             version             = "1.0.0"
             name_preffix        = var.name_preffix
