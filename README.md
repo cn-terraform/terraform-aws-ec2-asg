@@ -2,21 +2,21 @@
 
 This Terraform module deploys an AWS EC2 Auto Scaling Group.
 
-[![CircleCI](https://circleci.com/gh/jnonino-terraform/terraform-aws-ec2-asg.svg?style=svg)](https://circleci.com/gh/jnonino-terraform/terraform-aws-ec2-asg)
-[![](https://img.shields.io/github/license/jnonino-terraform/terraform-aws-ec2-asg)](https://github.com/jnonino-terraform/terraform-aws-ec2-asg)
-[![](https://img.shields.io/github/issues/jnonino-terraform/terraform-aws-ec2-asg)](https://github.com/jnonino-terraform/terraform-aws-ec2-asg)
-[![](https://img.shields.io/github/issues-closed/jnonino-terraform/terraform-aws-ec2-asg)](https://github.com/jnonino-terraform/terraform-aws-ec2-asg)
-[![](https://img.shields.io/github/languages/code-size/jnonino-terraform/terraform-aws-ec2-asg)](https://github.com/jnonino-terraformterraform-aws-ec2-asg)
-[![](https://img.shields.io/github/repo-size/jnonino-terraform/terraform-aws-ec2-asg)](https://github.com/jnonino-terraform/terraform-aws-ec2-asg)
+[![CircleCI](https://circleci.com/gh/jnonino/terraform-aws-ec2-asg.svg?style=svg)](https://circleci.com/gh/jnonino/terraform-aws-ec2-asg)
+[![](https://img.shields.io/github/license/jnonino/terraform-aws-ec2-asg)](https://github.com/jnonino/terraform-aws-ec2-asg)
+[![](https://img.shields.io/github/issues/jnonino/terraform-aws-ec2-asg)](https://github.com/jnonino/terraform-aws-ec2-asg)
+[![](https://img.shields.io/github/issues-closed/jnonino/terraform-aws-ec2-asg)](https://github.com/jnonino/terraform-aws-ec2-asg)
+[![](https://img.shields.io/github/languages/code-size/jnonino/terraform-aws-ec2-asg)](https://github.com/jnonino/terraform-aws-ec2-asg)
+[![](https://img.shields.io/github/repo-size/jnonino/terraform-aws-ec2-asg)](https://github.com/jnonino/terraform-aws-ec2-asg)
 
 ## Usage
 
 Check valid versions on:
-* Github Releases: <https://github.com/jnonino-terraform/terraform-aws-ec2-asg/releases>
-* Terraform Module Registry: <https://registry.terraform.io/modules/jnonino-terraform/ec2-asg/aws>
+* Github Releases: <https://github.com/jnonino/terraform-aws-ec2-asg/releases>
+* Terraform Module Registry: <https://registry.terraform.io/modules/jnonino/ec2-asg/aws>
 
         module "ec2-asg" { 
-            source              = "jnonino-terraform/ec2-asg/aws"
+            source              = "jnonino/ec2-asg/aws"
             version             = "1.0.0"
             name_preffix        = var.name_preffix
             profile             = var.profile
