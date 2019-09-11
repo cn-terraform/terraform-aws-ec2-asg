@@ -13,10 +13,10 @@ This Terraform module deploys an AWS EC2 Auto Scaling Group.
 
 Check valid versions on:
 * Github Releases: <https://github.com/jnonino-terraform/terraform-aws-ec2-asg/releases>
-* Terraform Module Registry: <https://registry.terraform.io/modules/jnonino/ec2-asg/aws>
+* Terraform Module Registry: <https://registry.terraform.io/modules/jnonino-terraform/ec2-asg/aws>
 
         module "ec2-asg" { 
-            source              = "jnonino/ec2-asg/aws"
+            source              = "jnonino-terraform/ec2-asg/aws"
             version             = "1.0.0"
             name_preffix        = var.name_preffix
             profile             = var.profile
