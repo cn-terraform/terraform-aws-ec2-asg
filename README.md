@@ -2,22 +2,22 @@
 
 This Terraform module deploys an AWS EC2 Auto Scaling Group.
 
-[![CircleCI](https://circleci.com/gh/jnonino/terraform-aws-ec2-asg.svg?style=svg)](https://circleci.com/gh/jnonino/terraform-aws-ec2-asg)
-[![](https://img.shields.io/github/license/jnonino/terraform-aws-ec2-asg)](https://github.com/jnonino/terraform-aws-ec2-asg)
-[![](https://img.shields.io/github/issues/jnonino/terraform-aws-ec2-asg)](https://github.com/jnonino/terraform-aws-ec2-asg)
-[![](https://img.shields.io/github/issues-closed/jnonino/terraform-aws-ec2-asg)](https://github.com/jnonino/terraform-aws-ec2-asg)
-[![](https://img.shields.io/github/languages/code-size/jnonino/terraform-aws-ec2-asg)](https://github.com/jnonino/terraform-aws-ec2-asg)
-[![](https://img.shields.io/github/repo-size/jnonino/terraform-aws-ec2-asg)](https://github.com/jnonino/terraform-aws-ec2-asg)
+[![CircleCI](https://circleci.com/gh/cn-terraform/terraform-aws-ec2-asg.svg?style=svg)](https://circleci.com/gh/cn-terraform/terraform-aws-ec2-asg)
+[![](https://img.shields.io/github/license/cn-terraform/terraform-aws-ec2-asg)](https://github.com/cn-terraform/terraform-aws-ec2-asg)
+[![](https://img.shields.io/github/issues/cn-terraform/terraform-aws-ec2-asg)](https://github.com/cn-terraform/terraform-aws-ec2-asg)
+[![](https://img.shields.io/github/issues-closed/cn-terraform/terraform-aws-ec2-asg)](https://github.com/cn-terraform/terraform-aws-ec2-asg)
+[![](https://img.shields.io/github/languages/code-size/cn-terraform/terraform-aws-ec2-asg)](https://github.com/cn-terraform/terraform-aws-ec2-asg)
+[![](https://img.shields.io/github/repo-size/cn-terraform/terraform-aws-ec2-asg)](https://github.com/cn-terraform/terraform-aws-ec2-asg)
 
 ## Usage
 
 Check valid versions on:
-* Github Releases: <https://github.com/jnonino/terraform-aws-ec2-asg/releases>
-* Terraform Module Registry: <https://registry.terraform.io/modules/jnonino/ec2-asg/aws>
+* Github Releases: <https://github.com/cn-terraform/terraform-aws-ec2-asg/releases>
+* Terraform Module Registry: <https://registry.terraform.io/modules/cn-terraform/ec2-asg/aws>
 
         module "ec2-asg" { 
-            source              = "jnonino/ec2-asg/aws"
-            version             = "1.0.0"
+            source              = "cn-terraform/ec2-asg/aws"
+            version             = "1.0.1"
             name_preffix        = var.name_preffix
             profile             = var.profile
             region              = var.region
@@ -28,7 +28,7 @@ Check valid versions on:
             availability_zones  = var.availability_zones
         }
 
-In the example only required values are show, but you can configure all values for this resources. Check documentation on: <https://registry.terraform.io/modules/jnonino/ec2-asg/aws>
+In the example only required values are show, but you can configure all values for this resources. Check documentation on: <https://registry.terraform.io/modules/cn-terraform/ec2-asg/aws>
 
 ## Output values
 * lc_name: The name of the launch configuration.
