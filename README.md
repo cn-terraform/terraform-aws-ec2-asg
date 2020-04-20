@@ -15,9 +15,9 @@ Check valid versions on:
 * Github Releases: <https://github.com/cn-terraform/terraform-aws-ec2-asg/releases>
 * Terraform Module Registry: <https://registry.terraform.io/modules/cn-terraform/ec2-asg/aws>
 
-        module "ec2-asg" { 
+        module "ec2-asg" {
             source              = "cn-terraform/ec2-asg/aws"
-            version             = "1.0.1"
+            version             = "1.0.2"
             name_preffix        = var.name_preffix
             profile             = var.profile
             region              = var.region
