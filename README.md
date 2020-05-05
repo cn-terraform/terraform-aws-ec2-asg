@@ -15,21 +15,6 @@ Check valid versions on:
 * Github Releases: <https://github.com/cn-terraform/terraform-aws-ec2-asg/releases>
 * Terraform Module Registry: <https://registry.terraform.io/modules/cn-terraform/ec2-asg/aws>
 
-        module "ec2-asg" {
-            source              = "cn-terraform/ec2-asg/aws"
-            version             = "1.0.2"
-            name_preffix        = var.name_preffix
-            profile             = var.profile
-            region              = var.region
-            image_id            = var.image_id
-            instance_type       = var.instance_type
-            max_size            = var.max_size
-            min_size            = var.min_size
-            availability_zones  = var.availability_zones
-        }
-
-In the example only required values are show, but you can configure all values for this resources. Check documentation on: <https://registry.terraform.io/modules/cn-terraform/ec2-asg/aws>
-
 ## Output values
 * lc_name: The name of the launch configuration.
 * lc_id: The ID of the launch configuration.

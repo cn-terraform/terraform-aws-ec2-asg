@@ -6,17 +6,6 @@ variable "name_preffix" {
 }
 
 # ---------------------------------------------------------------------------------------------------------------------
-# AWS CREDENTIALS AND REGION
-# ---------------------------------------------------------------------------------------------------------------------
-variable "profile" {
-  description = "AWS API key credentials to use"
-}
-
-variable "region" {
-  description = "AWS Region the infrastructure is hosted in"
-}
-
-# ---------------------------------------------------------------------------------------------------------------------
 # AWS EC2 LAUNCH CONFIGURATION
 # ---------------------------------------------------------------------------------------------------------------------
 variable "image_id" {
@@ -194,6 +183,6 @@ variable "service_linked_role_arn" {
   default     = ""
 }
 # NOT CONSIDERED
-  # launch_template - (Optional) Nested argument with Launch template specification to use to launch instances. 
+  # launch_template - (Optional) Nested argument with Launch template specification to use to launch instances.
   # mixed_instances_policy (Optional) Configuration block containing settings to define launch targets for Auto Scaling groups. Defined below.
   # initial_lifecycle_hook - (Optional) One or more Lifecycle Hooks to attach to the autoscaling group before instances are launched. The syntax is exactly the same as the separate aws_autoscaling_lifecycle_hook resource, without the autoscaling_group_name attribute. Please note that this will only work when creating a new autoscaling group. For all other use-cases, please use aws_autoscaling_lifecycle_hook resource.
