@@ -39,13 +39,13 @@ resource "aws_launch_configuration" "lc" {
   }
   dynamic "ephemeral_block_device" {
     for_each = var.ephemeral_block_device
-      content {
+    content {
       device_name  = ephemeral_block_device.value.device_name
       virtual_name = ephemeral_block_device.value.virtual_name
     }
   }
-  spot_price                       = var.spot_price
-  placement_tenancy                = var.placement_tenancy
+  spot_price        = var.spot_price
+  placement_tenancy = var.placement_tenancy
 }
 
 #------------------------------------------------------------------------------

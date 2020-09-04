@@ -157,7 +157,7 @@ variable "metrics_granularity" {
 variable "enabled_metrics" {
   description = "(Optional) A list of metrics to collect. The allowed values are GroupMinSize, GroupMaxSize, GroupDesiredCapacity, GroupInServiceInstances, GroupPendingInstances, GroupStandbyInstances, GroupTerminatingInstances, GroupTotalInstances."
   type        = list
-  default     = ["GroupMinSize","GroupMaxSize","GroupDesiredCapacity","GroupInServiceInstances","GroupPendingInstances","GroupStandbyInstances","GroupTerminatingInstances","GroupTotalInstances",]
+  default     = ["GroupMinSize", "GroupMaxSize", "GroupDesiredCapacity", "GroupInServiceInstances", "GroupPendingInstances", "GroupStandbyInstances", "GroupTerminatingInstances", "GroupTotalInstances", ]
 }
 variable "wait_for_capacity_timeout" {
   description = "(Optional) A maximum duration that Terraform should wait for ASG instances to be healthy before timing out (See also Waiting for Capacity.) Setting this to \"0\" causes Terraform to skip all Capacity Waiting behavior (Default: \"10m\")."
@@ -183,6 +183,6 @@ variable "service_linked_role_arn" {
   default     = ""
 }
 # NOT CONSIDERED
-  # launch_template - (Optional) Nested argument with Launch template specification to use to launch instances.
-  # mixed_instances_policy (Optional) Configuration block containing settings to define launch targets for Auto Scaling groups. Defined below.
-  # initial_lifecycle_hook - (Optional) One or more Lifecycle Hooks to attach to the autoscaling group before instances are launched. The syntax is exactly the same as the separate aws_autoscaling_lifecycle_hook resource, without the autoscaling_group_name attribute. Please note that this will only work when creating a new autoscaling group. For all other use-cases, please use aws_autoscaling_lifecycle_hook resource.
+# launch_template - (Optional) Nested argument with Launch template specification to use to launch instances.
+# mixed_instances_policy (Optional) Configuration block containing settings to define launch targets for Auto Scaling groups. Defined below.
+# initial_lifecycle_hook - (Optional) One or more Lifecycle Hooks to attach to the autoscaling group before instances are launched. The syntax is exactly the same as the separate aws_autoscaling_lifecycle_hook resource, without the autoscaling_group_name attribute. Please note that this will only work when creating a new autoscaling group. For all other use-cases, please use aws_autoscaling_lifecycle_hook resource.
