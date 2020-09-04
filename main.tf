@@ -2,7 +2,7 @@
 # Launch Configuration
 #------------------------------------------------------------------------------
 resource "aws_launch_configuration" "lc" {
-  name                             = "${var.name_preffix}_lc"
+  name                             = "${var.name_prefix}_lc"
   image_id                         = var.image_id
   instance_type                    = var.instance_type
   iam_instance_profile             = var.iam_instance_profile
@@ -53,7 +53,7 @@ resource "aws_launch_configuration" "lc" {
 #------------------------------------------------------------------------------
 resource "aws_autoscaling_group" "asg" {
   depends_on                = [aws_launch_configuration.lc]
-  name                      = "${var.name_preffix}_asg"
+  name                      = "${var.name_prefix}_asg"
   max_size                  = var.max_size
   min_size                  = var.min_size
   availability_zones        = var.availability_zones
@@ -79,7 +79,7 @@ resource "aws_autoscaling_group" "asg" {
   tags = [
     {
       key                 = "Name"
-      value               = "${var.name_preffix}_asg"
+      value               = "${var.name_prefix}_asg"
       propagate_at_launch = true
     },
   ]
@@ -90,7 +90,7 @@ resource "aws_autoscaling_group" "asg" {
 #------------------------------------------------------------------------------
 # Scaling UP - CPU High
 resource "aws_autoscaling_policy" "cpu_high" {
-  name                   = "${var.name_preffix}-cpu-high"
+  name                   = "${var.name_prefix}-cpu-high"
   autoscaling_group_name = "${aws_autoscaling_group.asg.name}"
   adjustment_type        = "ChangeInCapacity"
   policy_type            = "SimpleScaling"
@@ -99,7 +99,7 @@ resource "aws_autoscaling_policy" "cpu_high" {
 }
 # Scaling DOWN - CPU Low
 resource "aws_autoscaling_policy" "cpu_low" {
-  name                   = "${var.name_preffix}-cpu-high"
+  name                   = "${var.name_prefix}-cpu-high"
   autoscaling_group_name = "${aws_autoscaling_group.asg.name}"
   adjustment_type        = "ChangeInCapacity"
   policy_type            = "SimpleScaling"
@@ -111,7 +111,7 @@ resource "aws_autoscaling_policy" "cpu_low" {
 # CLOUDWATCH METRIC ALARMS
 #------------------------------------------------------------------------------
 resource "aws_cloudwatch_metric_alarm" "cpu_high_alarm" {
-  alarm_name          = "${var.name_preffix}-cpu-high-alarm"
+  alarm_name          = "${var.name_prefix}-cpu-high-alarm"
   comparison_operator = "GreaterThanOrEqualToThreshold"
   evaluation_periods  = "2"
   metric_name         = "CPUUtilization"
@@ -126,7 +126,7 @@ resource "aws_cloudwatch_metric_alarm" "cpu_high_alarm" {
   }
 }
 resource "aws_cloudwatch_metric_alarm" "cpu_low_alarm" {
-  alarm_name          = "${var.name_preffix}-cpu-low-alarm"
+  alarm_name          = "${var.name_prefix}-cpu-low-alarm"
   comparison_operator = "LessThanOrEqualToThreshold"
   evaluation_periods  = "2"
   metric_name         = "CPUUtilization"
