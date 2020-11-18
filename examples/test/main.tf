@@ -4,7 +4,7 @@ provider "aws" {
 
 module "asg" {
   source                      = "../../"
-  name_prefix                = "test"
+  name_prefix                 = "test"
   image_id                    = "ami-00579fbb15b954340"
   instance_type               = "t3.micro"
   associate_public_ip_address = true
