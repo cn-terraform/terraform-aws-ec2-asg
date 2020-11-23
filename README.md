@@ -2,7 +2,7 @@
 
 This Terraform module deploys an AWS EC2 Auto Scaling Group.
 
-[![CircleCI](https://circleci.com/gh/cn-terraform/terraform-aws-ec2-asg.svg?style=svg)](https://circleci.com/gh/cn-terraform/terraform-aws-ec2-asg)
+[![](https://github.com/cn-terraform/terraform-aws-ec2-asg/workflows/terraform/badge.svg)](https://github.com/cn-terraform/terraform-aws-ec2-asg/actions?query=workflow%3Aterraform)
 [![](https://img.shields.io/github/license/cn-terraform/terraform-aws-ec2-asg)](https://github.com/cn-terraform/terraform-aws-ec2-asg)
 [![](https://img.shields.io/github/issues/cn-terraform/terraform-aws-ec2-asg)](https://github.com/cn-terraform/terraform-aws-ec2-asg)
 [![](https://img.shields.io/github/issues-closed/cn-terraform/terraform-aws-ec2-asg)](https://github.com/cn-terraform/terraform-aws-ec2-asg)
