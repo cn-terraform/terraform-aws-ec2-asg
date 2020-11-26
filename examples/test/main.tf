@@ -1,7 +1,3 @@
-provider "aws" {
-  region = "us-east-1"
-}
-
 module "asg" {
   source                      = "../../"
   name_prefix                 = "test"
@@ -11,5 +7,3 @@ module "asg" {
   max_size                    = 3
   min_size                    = 1
 }
-
-
