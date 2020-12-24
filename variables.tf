@@ -24,7 +24,7 @@ variable "key_name" {
 }
 variable "security_groups" {
   description = "(Optional) A list of associated security group IDS."
-  type        = list
+  type        = list(any)
   default     = []
 }
 variable "associate_public_ip_address" {
@@ -59,17 +59,17 @@ variable "ebs_optimized" {
 }
 variable "root_block_device" {
   description = "(Optional) Customize details about the root block device of the instance. This is a list of maps, where each map should contain \"volume_type\", \"volume_size\", \"iops\" and \"delete_on_termination\""
-  type        = list
+  type        = list(any)
   default     = []
 }
 variable "ebs_block_device" {
   description = "(Optional) Additional EBS block devices to attach to the instance. This is a list of maps, where each map should contain \"device_name\", \"snapshot_id\", \"volume_type\", \"volume_size\", \"iops\", \"delete_on_termination\" and \"encrypted\""
-  type        = list
+  type        = list(any)
   default     = []
 }
 variable "ephemeral_block_device" {
   description = "(Optional) Customize Ephemeral (also known as \"Instance Store\") volumes on the instance. This is a list of maps, where each map should contain \"device_name\" and \"virtual_name\""
-  type        = list
+  type        = list(any)
   default     = []
 }
 variable "spot_price" {
@@ -94,7 +94,7 @@ variable "min_size" {
 }
 variable "availability_zones" {
   description = "(Required only for EC2-Classic) A list of one or more availability zones for the group. This parameter should not be specified when using vpc_zone_identifier."
-  type        = list
+  type        = list(any)
   default     = []
 }
 variable "default_cooldown" {
@@ -123,27 +123,27 @@ variable "force_delete" {
 }
 variable "load_balancers" {
   description = "(Optional) A list of elastic load balancer names to add to the autoscaling group names. Only valid for classic load balancers. For ALBs, use target_group_arns instead."
-  type        = list
+  type        = list(any)
   default     = []
 }
 variable "vpc_zone_identifier" {
   description = "(Optional) A list of subnet IDs to launch resources in."
-  type        = list
+  type        = list(any)
   default     = []
 }
 variable "target_group_arns" {
   description = "(Optional) A list of aws_alb_target_group ARNs, for use with Application or Network Load Balancing."
-  type        = list
+  type        = list(any)
   default     = []
 }
 variable "termination_policies" {
   description = "(Optional) A list of policies to decide how the instances in the auto scale group should be terminated. The allowed values are OldestInstance, NewestInstance, OldestLaunchConfiguration, ClosestToNextInstanceHour, OldestLaunchTemplate, AllocationStrategy, Default."
-  type        = list
+  type        = list(any)
   default     = ["Default"]
 }
 variable "suspended_processes" {
   description = "(Optional) A list of processes to suspend for the AutoScaling Group. The allowed values are Launch, Terminate, HealthCheck, ReplaceUnhealthy, AZRebalance, AlarmNotification, ScheduledActions, AddToLoadBalancer. Note that if you suspend either the Launch or Terminate process types, it can prevent your autoscaling group from functioning properly."
-  type        = list
+  type        = list(any)
   default     = []
 }
 variable "placement_group" {
@@ -156,7 +156,7 @@ variable "metrics_granularity" {
 }
 variable "enabled_metrics" {
   description = "(Optional) A list of metrics to collect. The allowed values are GroupMinSize, GroupMaxSize, GroupDesiredCapacity, GroupInServiceInstances, GroupPendingInstances, GroupStandbyInstances, GroupTerminatingInstances, GroupTotalInstances."
-  type        = list
+  type        = list(any)
   default     = ["GroupMinSize", "GroupMaxSize", "GroupDesiredCapacity", "GroupInServiceInstances", "GroupPendingInstances", "GroupStandbyInstances", "GroupTerminatingInstances", "GroupTotalInstances", ]
 }
 variable "wait_for_capacity_timeout" {
