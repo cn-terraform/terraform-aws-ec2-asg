@@ -37,7 +37,7 @@ variable "vpc_classic_link_id" {
 }
 variable "vpc_classic_link_security_groups" {
   description = "(Optional) The IDs of one or more security groups for the specified ClassicLink-enabled VPC (eg. sg-46ae3d11)."
-  default     = ""
+  default     = []
 }
 variable "user_data" {
   description = "(Optional) The user data to provide when launching the instance. Do not pass gzip-compressed data via this argument; see user_data_base64 instead."
