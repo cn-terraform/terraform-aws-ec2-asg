@@ -41,11 +41,11 @@ variable "vpc_classic_link_security_groups" {
 }
 variable "user_data" {
   description = "(Optional) The user data to provide when launching the instance. Do not pass gzip-compressed data via this argument; see user_data_base64 instead."
-  default     = ""
+  default     = null
 }
 variable "user_data_base64" {
   description = "(Optional) Can be used instead of user_data to pass base64-encoded binary data directly. Use this instead of user_data whenever the value is not a valid UTF-8 string. For example, gzip-encoded user data must be base64-encoded and passed via this argument to avoid corruption."
-  default     = ""
+  default     = null
 }
 variable "enable_monitoring" {
   description = "(Optional) Enables/disables detailed monitoring. This is enabled by default."
@@ -95,7 +95,7 @@ variable "min_size" {
 variable "availability_zones" {
   description = "(Required only for EC2-Classic) A list of one or more availability zones for the group. This parameter should not be specified when using vpc_zone_identifier."
   type        = list(any)
-  default     = []
+  default     = null
 }
 variable "default_cooldown" {
   description = "(Optional, Default: 300) Time (in seconds) after a scaling activity completes before another scaling activity can start."
@@ -129,7 +129,7 @@ variable "load_balancers" {
 variable "vpc_zone_identifier" {
   description = "(Optional) A list of subnet IDs to launch resources in."
   type        = list(any)
-  default     = []
+  default     = null
 }
 variable "target_group_arns" {
   description = "(Optional) A list of aws_alb_target_group ARNs, for use with Application or Network Load Balancing."
