@@ -35,12 +35,13 @@ In order to run all checks at any point run the following command:
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.74 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.0.0 |
 
 ## Modules
 
@@ -62,7 +63,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_associate_public_ip_address"></a> [associate\_public\_ip\_address](#input\_associate\_public\_ip\_address) | (Optional) Associate a public ip address with an instance in a VPC. | `bool` | n/a | yes |
-| <a name="input_availability_zones"></a> [availability\_zones](#input\_availability\_zones) | (Required only for EC2-Classic) A list of one or more availability zones for the group. This parameter should not be specified when using vpc\_zone\_identifier. | `list(any)` | `[]` | no |
+| <a name="input_availability_zones"></a> [availability\_zones](#input\_availability\_zones) | (Required only for EC2-Classic) A list of one or more availability zones for the group. This parameter should not be specified when using vpc\_zone\_identifier. | `list(any)` | `null` | no |
 | <a name="input_default_cooldown"></a> [default\_cooldown](#input\_default\_cooldown) | (Optional, Default: 300) Time (in seconds) after a scaling activity completes before another scaling activity can start. | `number` | `300` | no |
 | <a name="input_desired_capacity"></a> [desired\_capacity](#input\_desired\_capacity) | (Optional) The number of Amazon EC2 instances that should be running in the group. (See also Waiting for Capacity.) | `number` | `1` | no |
 | <a name="input_ebs_block_device"></a> [ebs\_block\_device](#input\_ebs\_block\_device) | (Optional) Additional EBS block devices to attach to the instance. This is a list of maps, where each map should contain "device\_name", "snapshot\_id", "volume\_type", "volume\_size", "iops", "delete\_on\_termination" and "encrypted" | `list(any)` | `[]` | no |
@@ -93,11 +94,11 @@ No modules.
 | <a name="input_suspended_processes"></a> [suspended\_processes](#input\_suspended\_processes) | (Optional) A list of processes to suspend for the AutoScaling Group. The allowed values are Launch, Terminate, HealthCheck, ReplaceUnhealthy, AZRebalance, AlarmNotification, ScheduledActions, AddToLoadBalancer. Note that if you suspend either the Launch or Terminate process types, it can prevent your autoscaling group from functioning properly. | `list(any)` | `[]` | no |
 | <a name="input_target_group_arns"></a> [target\_group\_arns](#input\_target\_group\_arns) | (Optional) A list of aws\_alb\_target\_group ARNs, for use with Application or Network Load Balancing. | `list(any)` | `[]` | no |
 | <a name="input_termination_policies"></a> [termination\_policies](#input\_termination\_policies) | (Optional) A list of policies to decide how the instances in the auto scale group should be terminated. The allowed values are OldestInstance, NewestInstance, OldestLaunchConfiguration, ClosestToNextInstanceHour, OldestLaunchTemplate, AllocationStrategy, Default. | `list(any)` | <pre>[<br>  "Default"<br>]</pre> | no |
-| <a name="input_user_data"></a> [user\_data](#input\_user\_data) | (Optional) The user data to provide when launching the instance. Do not pass gzip-compressed data via this argument; see user\_data\_base64 instead. | `string` | `""` | no |
-| <a name="input_user_data_base64"></a> [user\_data\_base64](#input\_user\_data\_base64) | (Optional) Can be used instead of user\_data to pass base64-encoded binary data directly. Use this instead of user\_data whenever the value is not a valid UTF-8 string. For example, gzip-encoded user data must be base64-encoded and passed via this argument to avoid corruption. | `string` | `""` | no |
+| <a name="input_user_data"></a> [user\_data](#input\_user\_data) | (Optional) The user data to provide when launching the instance. Do not pass gzip-compressed data via this argument; see user\_data\_base64 instead. | `any` | `null` | no |
+| <a name="input_user_data_base64"></a> [user\_data\_base64](#input\_user\_data\_base64) | (Optional) Can be used instead of user\_data to pass base64-encoded binary data directly. Use this instead of user\_data whenever the value is not a valid UTF-8 string. For example, gzip-encoded user data must be base64-encoded and passed via this argument to avoid corruption. | `any` | `null` | no |
 | <a name="input_vpc_classic_link_id"></a> [vpc\_classic\_link\_id](#input\_vpc\_classic\_link\_id) | (Optional) The ID of a ClassicLink-enabled VPC. Only applies to EC2-Classic instances. (eg. vpc-2730681a) | `string` | `""` | no |
-| <a name="input_vpc_classic_link_security_groups"></a> [vpc\_classic\_link\_security\_groups](#input\_vpc\_classic\_link\_security\_groups) | (Optional) The IDs of one or more security groups for the specified ClassicLink-enabled VPC (eg. sg-46ae3d11). | `string` | `""` | no |
-| <a name="input_vpc_zone_identifier"></a> [vpc\_zone\_identifier](#input\_vpc\_zone\_identifier) | (Optional) A list of subnet IDs to launch resources in. | `list(any)` | `[]` | no |
+| <a name="input_vpc_classic_link_security_groups"></a> [vpc\_classic\_link\_security\_groups](#input\_vpc\_classic\_link\_security\_groups) | (Optional) The IDs of one or more security groups for the specified ClassicLink-enabled VPC (eg. sg-46ae3d11). | `list` | `[]` | no |
+| <a name="input_vpc_zone_identifier"></a> [vpc\_zone\_identifier](#input\_vpc\_zone\_identifier) | (Optional) A list of subnet IDs to launch resources in. | `list(any)` | `null` | no |
 | <a name="input_wait_for_capacity_timeout"></a> [wait\_for\_capacity\_timeout](#input\_wait\_for\_capacity\_timeout) | (Optional) A maximum duration that Terraform should wait for ASG instances to be healthy before timing out (See also Waiting for Capacity.) Setting this to "0" causes Terraform to skip all Capacity Waiting behavior (Default: "10m"). | `string` | `"10m"` | no |
 | <a name="input_wait_for_elb_capacity"></a> [wait\_for\_elb\_capacity](#input\_wait\_for\_elb\_capacity) | (Optional) Setting this will cause Terraform to wait for exactly this number of healthy instances from this autoscaling group in all attached load balancers on both create and update operations. (Takes precedence over min\_elb\_capacity behavior.) (See also Waiting for Capacity.) | `number` | `null` | no |
 
