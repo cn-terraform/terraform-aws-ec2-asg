@@ -99,7 +99,7 @@ resource "aws_autoscaling_policy" "cpu_high" {
 }
 # Scaling DOWN - CPU Low
 resource "aws_autoscaling_policy" "cpu_low" {
-  name                   = "${var.name_prefix}-cpu-high"
+  name                   = "${var.name_prefix}-cpu-low"
   autoscaling_group_name = aws_autoscaling_group.asg.name
   adjustment_type        = "ChangeInCapacity"
   policy_type            = "SimpleScaling"
